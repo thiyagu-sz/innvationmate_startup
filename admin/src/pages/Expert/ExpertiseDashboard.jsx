@@ -5,7 +5,7 @@ import { ExpertContext } from '../../context/ExpertContext'
 import { assets } from '../../assets/assets'
 import { AppContext } from '../../context/AppContext'
 
-const DoctorDashboard = () => {
+const ExpertiseDashboard = () => {
 
   const { dToken, dashData, getDashData, cancelAppointment, completeAppointment } = useContext(ExpertContext)
   const { slotDateFormat, currency } = useContext(AppContext)
@@ -77,4 +77,4 @@ const DoctorDashboard = () => {
   )
 }
 
-export default DoctorDashboard
+export default ExpertiseDashboard

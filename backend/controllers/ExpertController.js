@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import doctorModel from "../models/doctorModel.js";
+import ExpertModel from "../models/ExpertModel.js";
 import appointmentModel from "../models/appointmentModel.js";
 
 // API for doctor Login 
@@ -9,7 +9,7 @@ const loginDoctor = async (req, res) => {
     try {
 
         const { email, password } = req.body
-        const user = await doctorModel.findOne({ email })
+        const user = await ExpertModel.findOne({ email })
 
         if (!user) {
             return res.json({ success: false, message: "Invalid credentials" })
@@ -92,7 +92,7 @@ const appointmentComplete = async (req, res) => {
 const doctorList = async (req, res) => {
     try {
 
-        const doctors = await doctorModel.find({}).select(['-password', '-email'])
+        const doctors = await ExpertModel.find({}).select(['-password', '-email'])
         res.json({ success: true, doctors })
 
     } catch (error) {
@@ -108,8 +108,8 @@ const changeAvailablity = async (req, res) => {
 
         const { docId } = req.body
 
-        const docData = await doctorModel.findById(docId)
-        await doctorModel.findByIdAndUpdate(docId, { available: !docData.available })
+        const docData = await ExpertModel.findById(docId)
+        await ExpertModel.findByIdAndUpdate(docId, { available: !docData.available })
         res.json({ success: true, message: 'Availablity Changed' })
 
     } catch (error) {
@@ -119,11 +119,11 @@ const changeAvailablity = async (req, res) => {
 }
 
 // API to get doctor profile for  Doctor Panel
-const doctorProfile = async (req, res) => {
+const ExpertiseProfile = async (req, res) => {
     try {
 
         const { docId } = req.body
-        const profileData = await doctorModel.findById(docId).select('-password')
+        const profileData = await ExpertModel.findById(docId).select('-password')
 
         res.json({ success: true, profileData })
 
@@ -134,12 +134,12 @@ const doctorProfile = async (req, res) => {
 }
 
 // API to update doctor profile data from  Doctor Panel
-const updateDoctorProfile = async (req, res) => {
+const updateExpertiseProfile = async (req, res) => {
     try {
 
         const { docId, fees, address, available } = req.body
 
-        await doctorModel.findByIdAndUpdate(docId, { fees, address, available })
+        await ExpertModel.findByIdAndUpdate(docId, { fees, address, available })
 
         res.json({ success: true, message: 'Profile Updated' })
 
@@ -150,7 +150,7 @@ const updateDoctorProfile = async (req, res) => {
 }
 
 // API to get dashboard data for doctor panel
-const doctorDashboard = async (req, res) => {
+const ExpertiseDashboard = async (req, res) => {
     try {
 
         const { docId } = req.body
@@ -197,7 +197,7 @@ export {
     doctorList,
     changeAvailablity,
     appointmentComplete,
-    doctorDashboard,
-    doctorProfile,
-    updateDoctorProfile
+    ExpertiseDashboard,
+    ExpertiseProfile,
+    updateExpertiseProfile
 }

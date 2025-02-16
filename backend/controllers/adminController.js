@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import appointmentModel from "../models/appointmentModel.js";
-import doctorModel from "../models/doctorModel.js";
+import ExpertModel from "../models/ExpertModel.js";
 import bcrypt from "bcrypt";
 import validator from "validator";
 import { v2 as cloudinary } from "cloudinary";
@@ -58,7 +58,7 @@ const appointmentCancel = async (req, res) => {
 }
 
 // API for adding Doctor
-const addDoctor = async (req, res) => {
+const AddExpert = async (req, res) => {
 
     try {
 
@@ -102,7 +102,7 @@ const addDoctor = async (req, res) => {
             date: Date.now()
         }
 
-        const newDoctor = new doctorModel(doctorData)
+        const newDoctor = new ExpertModel(doctorData)
         await newDoctor.save()
         res.json({ success: true, message: 'Doctor Added' })
 
@@ -116,7 +116,7 @@ const addDoctor = async (req, res) => {
 const allDoctors = async (req, res) => {
     try {
 
-        const doctors = await doctorModel.find({}).select('-password')
+        const doctors = await ExpertModel.find({}).select('-password')
         res.json({ success: true, doctors })
 
     } catch (error) {
@@ -129,7 +129,7 @@ const allDoctors = async (req, res) => {
 const adminDashboard = async (req, res) => {
     try {
 
-        const doctors = await doctorModel.find({})
+        const doctors = await ExpertModel.find({})
         const users = await userModel.find({})
         const appointments = await appointmentModel.find({})
 
@@ -152,7 +152,7 @@ export {
     loginAdmin,
     appointmentsAdmin,
     appointmentCancel,
-    addDoctor,
+    AddExpert,
     allDoctors,
     adminDashboard
 }

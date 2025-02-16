@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { AdminContext } from '../../context/AdminContext'
 
-const DoctorsList = () => {
+const ExpertList = () => {
 
   const { doctors, changeAvailability , aToken , getAllDoctors} = useContext(AdminContext)
 
@@ -33,4 +33,4 @@ const DoctorsList = () => {
   )
 }
 
-export default DoctorsList
+export default ExpertList
