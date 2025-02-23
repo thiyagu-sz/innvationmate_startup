@@ -8,12 +8,12 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import Dashboard from './pages/Admin/Dashboard';
 import AllAppointments from './pages/Admin/AllAppointments';
-import AddExpert from './pages/Admin/AddExpert';
-import ExpertList from './pages/Admin/ExpertList';
+import AddExpert from './pages/Admin/AddDoctor';
+import DoctorsList from './pages/Admin/DoctorsList';
 import Login from './pages/Login';
-import ExpertiseAppointments from './pages/Expert/ExpertiseAppointments';
-import ExpertiseDashboard from './pages/Expert/ExpertiseDashboard';
-import ExpertiseProfile from './pages/Expert/ExpertiseProfile';
+import DoctorAppointments from './pages/Doctor/DoctorAppointments';
+import DoctorDashboard from './pages/Doctor/DoctorDashboard';
+import DoctorProfile from './pages/Doctor/DoctorProfile';
 
 const App = () => {
 
@@ -30,11 +30,19 @@ const App = () => {
           <Route path='/' element={<></>} />
           <Route path='/admin-dashboard' element={<Dashboard />} />
           <Route path='/all-appointments' element={<AllAppointments />} />
+<<<<<<< HEAD
           <Route path='/add-Expert' element={<AddExpert />} />
           <Route path='/Expertise-list' element={<ExpertList />} />
           <Route path='/Expertise-dashboard' element={<ExpertiseDashboard />} />
           <Route path='/Expertise-appointments' element={<ExpertiseAppointments />} />
           <Route path='/Expertise-profile' element={<ExpertiseProfile />} />
+=======
+          <Route path='/add-doctor' element={<AddExpert />} />
+          <Route path='/doctor-list' element={<DoctorsList />} />
+          <Route path='/doctor-dashboard' element={<DoctorDashboard />} />
+          <Route path='/doctor-appointments' element={<DoctorAppointments />} />
+          <Route path='/doctor-profile' element={<DoctorProfile />} />
+>>>>>>> parent of e06ef44 (cc)
         </Routes>
       </div>
     </div>

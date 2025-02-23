@@ -4,7 +4,7 @@ import { ExpertContext } from '../../context/ExpertContext'
 import { AppContext } from '../../context/AppContext'
 import { assets } from '../../assets/assets'
 
-const ExpertiseAppointments = () => {
+const DoctorAppointments = () => {
 
   const { dToken, appointments, getAppointments, cancelAppointment, completeAppointment } = useContext(ExpertContext)
   const { slotDateFormat, calculateAge, currency } = useContext(AppContext)
@@ -61,4 +61,4 @@ const ExpertiseAppointments = () => {
   )
 }
 
-export default ExpertiseAppointments
+export default DoctorAppointments

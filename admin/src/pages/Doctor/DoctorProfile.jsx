@@ -4,7 +4,7 @@ import { AppContext } from '../../context/AppContext'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 
-const ExpertiseProfile = () => {
+const DoctorProfile = () => {
 
     const { dToken, profileData, setProfileData, getProfileData } = useContext(ExpertContext)
     const { currency, backendUrl } = useContext(AppContext)
@@ -105,4 +105,4 @@ const ExpertiseProfile = () => {
     )
 }
 
-export default ExpertiseProfile
+export default DoctorProfile
