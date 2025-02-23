@@ -21,7 +21,7 @@ const ExpertiseProfile = () => {
                 available: profileData.available
             }
 
-            const { data } = await axios.post(backendUrl + '/api/doctor/update-profile', updateData, { headers: { dToken } })
+            const { data } = await axios.post(backendUrl + '//api/expertise//update-profile', updateData, { headers: { dToken } })
 
             if (data.success) {
                 toast.success(data.message)

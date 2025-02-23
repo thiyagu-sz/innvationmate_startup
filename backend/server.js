@@ -15,12 +15,18 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
+
+app.use(cors({
+  origin: ['http://localhost:5174', 'https://innvationmate-startup.vercel.app/'],  // ✅ Allow local & production frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // api endpoints
 app.use("/api/user", userRouter)
 app.use("/api/admin", adminRouter)
-app.use("/api/doctor", ExpertRouter)
+app.use("//api/expertise/", ExpertRouter)
 
 app.get("/", (req, res) => {
   res.send("API Working")
