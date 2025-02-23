@@ -42,6 +42,9 @@ const App = () => {
           <Route path='/doctor-dashboard' element={<DoctorDashboard />} />
           <Route path='/doctor-appointments' element={<DoctorAppointments />} />
           <Route path='/doctor-profile' element={<DoctorProfile />} />
+<<<<<<< HEAD
+>>>>>>> parent of e06ef44 (cc)
+=======
 >>>>>>> parent of e06ef44 (cc)
         </Routes>
       </div>
