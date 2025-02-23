@@ -28,7 +28,7 @@ app.use("/api/user", userRouter)
 app.use("/api/admin", adminRouter)
 <<<<<<< HEAD
 <<<<<<< HEAD
-app.use("//api/expertise/", ExpertRouter)
+app.use("//api/doctor/", ExpertRouter)
 =======
 app.use("/api/doctor", doctorRouter)
 >>>>>>> parent of e06ef44 (cc)
